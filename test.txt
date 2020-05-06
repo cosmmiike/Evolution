@@ -3,6 +3,22 @@ TEST 1 - evolution_3.py
 B = 1, D = 0.1, R = 0         :    Population -> 10
 B = 0.1, D = 0.01, R = 0      :    Population -> 10
 B = 1, D = 0.01, R = 0        :    Population -> 100
-B = 0.1, D = 0.1, R = 0       :    Population -> 1  
+B = 0.1, D = 0.1, R = 0       :    Population -> 1
 
-SUM : Population = B / D
+Population = B / D
+
+
+--------------------------------------------------------
+
+
+TEST 2 (rabbits) - evolution_3.py
+
+B = 1, D = 0.9, R = 0.8       :    Population -> 10
+B = 0.1, D = 0.05, R = 0      :    Population -> 2
+B = 0.1, D = 0.05, R = 0.01   :    Population -> 2.5
+B = 0.1, D = 0.05, R = 0.02   :    Population -> 3.3
+B = 0.1, D = 0.05, R = 0.03   :    Population -> 5
+B = 0.1, D = 0.05, R = 0.04   :    Population -> 10
+B = 0.1, D = 0.05, R = 0.05   :    Population -> inf
+
+Population = B / (D - R)

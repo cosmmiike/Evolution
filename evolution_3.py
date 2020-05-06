@@ -6,15 +6,20 @@ import seaborn as sns
 sns.set(style="darkgrid")
 
 
+BIRTH_RATE = 0.1
+DEATH_RATE = 0.05
+REPLICATION_RATE = 0.06
+
+
 class World:
     def __init__(self):
-        self.birth_rate = 1  # chance of a new spontaneously born creation is 100 %
+        self.birth_rate = BIRTH_RATE  # chance of a new spontaneously born creation
         self.creations = []
 
     def evolve(self):
         self.spontaneous_birth()
-        self.replication()
         self.death()
+        self.replication()
 
     def spontaneous_birth(self):
         if random() < self.birth_rate:
@@ -36,11 +41,11 @@ class World:
 
 class Creation:
     def __init__(self):
-        self.death_rate = 0.1  # chance of death is set to 10 %
-        self.repoduction_rate = 0  # chance of replication is set to 0
+        self.death_rate = DEATH_RATE
+        self.replication_rate = REPLICATION_RATE
 
     def replicate(self):
-        if random() < self.repoduction_rate:
+        if random() < self.replication_rate:
             return Creation()
         return None
 
@@ -58,7 +63,7 @@ def show_analytics(data):
 
 
 def main():
-    days = 365
+    days = 700
     world = World()
 
     print('\n    Day  |   Population  ')
