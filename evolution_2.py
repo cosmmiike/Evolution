@@ -32,7 +32,6 @@ def main():
 
     for day in range(1, days + 1):
         world.reproduction()
-        world.spontaneous_birth()
         print('{:>7}  | {:>12}  '.format(day, len(world.creations)))
 
     print()
