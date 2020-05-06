@@ -22,3 +22,12 @@ B = 0.1, D = 0.05, R = 0.04   :    Population -> 10
 B = 0.1, D = 0.05, R = 0.05   :    Population -> inf
 
 Population = B / (D - R)
+
+
+TEST 3 (exponential growth) - evolution_3.py
+
+I = 5, B = 1, D = 0.2, R = 0        :     Population -> 5
+I = 5, B = 1, D = 0.2, R = 0.1      :     Population -> 10
+I = 5, B = 1, D = 0.2, R = 0.2      :     Population -> inf - linear
+I = 5, B = 1, D = 0.2, R = 0.3      :     Population -> inf - exponential
+I = 2, B = 0, D = 0.2, R = 0.3      :     Population -> inf - death / exponential

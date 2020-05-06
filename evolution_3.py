@@ -6,15 +6,21 @@ import seaborn as sns
 sns.set(style="darkgrid")
 
 
-BIRTH_RATE = 0.1
-DEATH_RATE = 0.05
-REPLICATION_RATE = 0.06
+N_INIT = 2
+N_DAYS = 80
+BIRTH_RATE = 0
+DEATH_RATE = 0.2
+REPLICATION_RATE = 0.3
 
 
 class World:
     def __init__(self):
         self.birth_rate = BIRTH_RATE  # chance of a new spontaneously born creation
         self.creations = []
+        self.n_init = N_INIT
+
+        for _ in range(self.n_init):
+            self.creations.append(Creation())
 
     def evolve(self):
         self.spontaneous_birth()
@@ -58,12 +64,12 @@ class Creation:
 def show_analytics(data):
     df = pd.DataFrame(data, columns=['Day', 'Population', 'Average'])
     df.set_index('Day', inplace=True)
-    sns.lineplot(data=df)
+    sns.lineplot(data=df, ds='steps', dashes=False)
     plt.show()
 
 
 def main():
-    days = 700
+    days = N_DAYS
     world = World()
 
     print('\n    Day  |   Population  ')
