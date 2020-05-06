@@ -9,7 +9,7 @@ class World:
     def reproduction(self):
         new_creations = []
         for creation in self.creations:
-            new_creations.append(creation.reproduce())
+            new_creations.append(creation.replicate())
         self.creations += new_creations
 
 
@@ -18,7 +18,7 @@ class Creation:
         self.death_rate = 0  # chance of death is 0 %
         self.repoduction_rate = 1  # chance of reproduction is 100 %
 
-    def reproduce(self):
+    def replicate(self):
         return Creation()
 
 
