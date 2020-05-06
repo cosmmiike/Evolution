@@ -1,0 +1,8 @@
+TEST 1 - evolution_3.py
+
+B = 1, D = 0.1, R = 0         :    Population -> 10
+B = 0.1, D = 0.01, R = 0      :    Population -> 10
+B = 1, D = 0.01, R = 0        :    Population -> 100
+B = 0.1, D = 0.1, R = 0       :    Population -> 1  
+
+SUM : Population = B / D
